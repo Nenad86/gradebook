@@ -29,15 +29,16 @@ export default class AddProfesor{
     }
 
     get imageInputField(){
-        return cy.get('#__BVID__65');
+        return cy.get('input[class="form-control"]').eq(2);
     }
 
-addUser (name, lastName, gradeBook){
+addUser (name, lastName, image, gradeBook){
     this.addProfesorButton.click();
     this.nameInputField.type(name);
     this.lastNameInputField.type(lastName);
-    this.gradeBookList.type(gradeBook);
-    //this.addImageButton.click();
+    this.addImageButton.click();
+    this.imageInputField.type(image);
+    this.gradeBookList.select(gradeBook);
     this.submitButton.click();
     }
 }

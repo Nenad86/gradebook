@@ -6,14 +6,14 @@ import  data  from '../fixtures/data.json'
 const faker = require('faker');
 
 describe('loginPage', () =>{
-
+    
     let userData = {
         randomEmail: faker.internet.email(),
         randomPassword: faker.internet.password()
     }
 
     before('visit link', () =>{
-            cy.visit('https://gradebook.vivifyideas.com/login')
+            cy.visit('/login')
             cy.url().should("contain", "/login")  
     })
 
